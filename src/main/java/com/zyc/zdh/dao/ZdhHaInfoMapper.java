@@ -14,6 +14,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface ZdhHaInfoMapper extends BaseMapper<ZdhHaInfo> {
 
 

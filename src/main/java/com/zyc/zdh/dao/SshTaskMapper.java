@@ -4,6 +4,7 @@ import com.zyc.notscan.BaseMapper;
 import com.zyc.zdh.entity.SqlTaskInfo;
 import com.zyc.zdh.entity.SshTaskInfo;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface SshTaskMapper extends BaseMapper<SshTaskInfo> {
 
     @Delete("delete from ssh_task_info where id = #{ids_str}")

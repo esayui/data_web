@@ -14,6 +14,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface ZdhNginxMapper extends BaseMapper<ZdhNginx> {
 
     @Select(value = "select * from zdh_nginx where owner=#{owner} ")

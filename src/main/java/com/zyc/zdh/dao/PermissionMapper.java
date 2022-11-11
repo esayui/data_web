@@ -2,10 +2,7 @@ package com.zyc.zdh.dao;
 
 import com.zyc.notscan.BaseMapper;
 import com.zyc.zdh.entity.PermissionUserInfo;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -16,6 +13,7 @@ import java.util.List;
  * @date 2018年2月6日  
  * @Description: TODO  
  */
+@Mapper
 public interface PermissionMapper extends BaseMapper<PermissionUserInfo> {
 
 

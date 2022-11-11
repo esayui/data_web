@@ -13,6 +13,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface ZdhLogsMapper extends BaseMapper<ZdhLogs> {
 
     @Delete("delete from zdh_logs where job_id = #{ids_str}")

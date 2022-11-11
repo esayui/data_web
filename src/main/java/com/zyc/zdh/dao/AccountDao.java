@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.*;
  * @date 2018年2月6日  
  * @Description: TODO  
  */
+@Mapper
 public interface AccountDao {
 
 	@Select(value="select * from account_info where user_name=#{userName} and user_password=#{password}")

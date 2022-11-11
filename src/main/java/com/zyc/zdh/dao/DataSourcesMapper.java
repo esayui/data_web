@@ -2,10 +2,7 @@ package com.zyc.zdh.dao;
 
 import com.zyc.notscan.BaseMapper;
 import com.zyc.zdh.entity.DataSourcesInfo;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -15,6 +12,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface DataSourcesMapper extends BaseMapper<DataSourcesInfo> {
 
     @Delete("delete from data_sources_info where id = #{ids_str}")

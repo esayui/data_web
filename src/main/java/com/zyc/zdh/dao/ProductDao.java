@@ -2,6 +2,7 @@ package com.zyc.zdh.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -14,6 +15,7 @@ import com.zyc.zdh.entity.ProductInfo;
  * @date 2018年2月28日  
  * @Description: TODO  
  */
+@Mapper
 public interface ProductDao {
 
 	@Select("select * from product_info where type_id=#{typeId} order by ${sortColumn} ${sortDir}")

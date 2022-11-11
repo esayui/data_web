@@ -17,8 +17,8 @@
         </commentGenerator>
         <!--数据库链接地址账号密码 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/mydb?serverTimezone=GMT%2B8" userId="zyc"
-                        password="123456">
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/db_repository?serverTimezone=GMT%2B8" userId="rengu"
+                        password="rengu">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false" />

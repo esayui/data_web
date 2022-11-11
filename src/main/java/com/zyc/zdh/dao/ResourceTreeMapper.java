@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-
+@Mapper
 public interface ResourceTreeMapper extends BaseMapper<ResourceTreeInfo> {
 
     @Update(value = "update resource_tree_info  set parent=#{parent},level=#{level} where id=#{id}")

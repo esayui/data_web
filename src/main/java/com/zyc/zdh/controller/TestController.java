@@ -38,6 +38,6 @@ public class TestController {
 	@RequestMapping("quartzJob")
 	public void testQuartzJob(){
 		RedisConfig redis=SpringContext.applicationContext.getBean(RedisConfig.class);
-		System.out.println(redis.getHostName());
+		System.out.println(redis.getRedisHost());
 	}
 }

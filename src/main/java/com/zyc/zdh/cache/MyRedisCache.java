@@ -3,8 +3,8 @@ package com.zyc.zdh.cache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.Cache;
-import org.springframework.data.redis.cache.RedisCacheElement;
-import org.springframework.data.redis.cache.RedisCacheKey;
+//import org.springframework.data.redis.cache.RedisCacheElement;
+//import org.springframework.data.redis.cache.RedisCacheKey;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -60,8 +60,9 @@ public class MyRedisCache implements Cache {
 		if(myRedis!=null){
 			logger.info("取数据myReids库===key:{}",key);
 			if(myRedis.get(key)!=null){
-				RedisCacheElement vr=new RedisCacheElement(new RedisCacheKey(key),myRedis.get(key).get());
-				return vr;
+				return myRedis.get(key);
+//				RedisCacheElement vr=new RedisCacheElement(new RedisCacheKey(key),myRedis.get(key).get());
+//				return vr;
 			}
 		}
 		return null;

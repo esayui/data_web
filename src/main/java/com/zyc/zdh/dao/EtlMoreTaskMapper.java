@@ -4,6 +4,7 @@ import com.zyc.notscan.BaseMapper;
 import com.zyc.zdh.entity.EtlMoreTaskInfo;
 import com.zyc.zdh.entity.EtlTaskInfo;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface EtlMoreTaskMapper extends BaseMapper<EtlMoreTaskInfo> {
 
     @Delete("delete from etl_more_task_info where id = #{ids_str}")

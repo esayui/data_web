@@ -4,6 +4,7 @@ import com.zyc.notscan.BaseMapper;
 import com.zyc.zdh.entity.JarTaskInfo;
 import com.zyc.zdh.entity.SqlTaskInfo;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface JarTaskMapper extends BaseMapper<JarTaskInfo> {
 
     @Delete({ "<script>",

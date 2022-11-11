@@ -5,6 +5,7 @@ import com.zyc.zdh.entity.EtlTaskInfo;
 import com.zyc.zdh.entity.EtlTaskUpdateLogs;
 import com.zyc.zdh.entity.QuotaInfo;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * @date 2017年12月26日  
  * @Description: TODO  
  */
+@Mapper
 public interface EtlTaskUpdateLogsMapper extends BaseMapper<EtlTaskUpdateLogs> {
 
 }

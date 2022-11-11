@@ -2,9 +2,10 @@ package com.zyc.zdh.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-//@Mapper
+@Mapper
 public interface DataAndRuleDao {
 
 	/*@SelectProvider(type=DataAndRuleProvider.class,method="findDataByTableName")

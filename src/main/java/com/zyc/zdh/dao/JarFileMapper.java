@@ -3,12 +3,13 @@ package com.zyc.zdh.dao;
 import com.zyc.notscan.BaseMapper;
 import com.zyc.zdh.entity.JarFileInfo;
 import com.zyc.zdh.entity.ZdhDownloadInfo;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-
+@Mapper
 public interface JarFileMapper extends BaseMapper<JarFileInfo> {
 
     @Select({"<script>",
