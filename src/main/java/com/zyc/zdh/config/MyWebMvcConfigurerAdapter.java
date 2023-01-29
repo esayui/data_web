@@ -9,10 +9,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
@@ -22,7 +19,7 @@ import java.text.SimpleDateFormat;
 
 @Configuration
 @EnableWebMvc
-public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
+public class MyWebMvcConfigurerAdapter implements WebMvcConfigurer  {
 
 	@Autowired
 	Environment ev;
@@ -63,7 +60,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		// viewResolver.setPrefix("/WEB-INF/classes/views/");
+
         System.out.println("打印web.path:"+ev.getProperty("web.path"));
 		viewResolver.setPrefix(ev.getProperty("web.path"));
 		viewResolver.setSuffix(".html");
@@ -85,8 +82,23 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 				.addResourceLocations(ev.getProperty("web.path")+"img/")
 				.addResourceLocations(ev.getProperty("web.path")+"plugins/")
 				.addResourceLocations(ev.getProperty("web.path")+"zdh_flow/")
-				.addResourceLocations(ev.getProperty("web.path")+"statics/");
+				.addResourceLocations(ev.getProperty("web.path")+"statics/")
+				.addResourceLocations(ev.getProperty("web.path")+"etl/")
+				.addResourceLocations(ev.getProperty("web.path")+"html/");
+
 
 	}
+
+	/**
+	 * 允许跨域
+	 */
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+				.allowedOriginPatterns("*")
+				.allowedMethods("GET", "POST", "PUT", "OPTIONS", "DELETE", "PATCH")
+				.allowCredentials(true).maxAge(3600);
+	}
+
 
 }
